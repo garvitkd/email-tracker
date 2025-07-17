@@ -1,0 +1,9 @@
+<?php
+$file = 'log.txt';
+$ip = $_SERVER['REMOTE_ADDR'];
+$time = date("Y-m-d H:i:s");
+$log = "Opened at: $time | IP: $ip\n";
+file_put_contents($file, $log, FILE_APPEND);
+header('Content-Type: image/png');
+readfile('pixel.png');
+?>
